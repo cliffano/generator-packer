@@ -1,0 +1,15 @@
+---
+package_name: generator-packer
+author: Cliffano Subagio
+generator:
+  component: packer-python
+  inputs:
+    project_id: packer-python
+    project_name: Packer Python
+    project_desc: Packer Python project description
+    author_name: Cliffano Subagio
+    author_email: blah@cliffano.com
+    author_url: https://github.com/cliffano
+    github_id: cliffano
+    github_repo: generator-packer
+    github_token_prefix: STUDIO

@@ -1,0 +1,26 @@
+---
+- name: Provision {{project_name}}
+  hosts: localhost
+  tasks:
+    - name: Install message transformation command
+      ansible.builtin.copy:
+        dest: '/usr/local/bin/{{project_id}}'
+        mode: '0755'
+        content: |
+          #!/usr/bin/env python3
+          import argparse
+
+          parser = argparse.ArgumentParser(description='{{project_name}} message transformer')
+          parser.add_argument(
+              '--message',
+              default='Hello World',
+              help='Message text to transform',
+          )
+
+          args = parser.parse_args()
+          message = args.message
+
+          print(f'Original: {message}')
+          print(f'Reverse: {message[::-1]}')
+          print(f'Uppercase: {message.upper()}')
+          print(f'Lowercase: {message.lower()}')

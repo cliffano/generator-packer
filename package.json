@@ -1,0 +1,9 @@
+{
+  "name": "plop-generator-packer",
+  "version": "0.9.0-pre.0",
+  "type": "module",
+  "description": "",
+  "devDependencies": {
+    "plop": "4.0.4"
+  }
+}

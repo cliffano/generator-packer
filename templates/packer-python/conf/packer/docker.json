@@ -1,0 +1,4 @@
+{
+  "docker_source": "python:3.14-alpine3.23",
+  "version": "0.1.0-pre.0"
+}
