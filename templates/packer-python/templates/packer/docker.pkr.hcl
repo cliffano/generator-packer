@@ -43,7 +43,8 @@ source "docker" "studio" {
   changes = [
     "ENV LANG en_US.UTF-8",
     "ENV PATH /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
-    "ENTRYPOINT [\"{{project_id}}\"]"
+    "ENTRYPOINT [\"{{project_id}}\"]",
+    "CMD []"
   ]
 }
 
