@@ -9,8 +9,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7
-        with:
-          ref: main
       - uses: ./.github/actions/publish-docker-action
         env:
           DOCKERHUB_TOKEN: $\{{ secrets.STUDIO_DOCKERHUB_TOKEN }}
