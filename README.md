@@ -10,7 +10,7 @@
 
 # Generator Packer
 
-Generator Packer is Code generator for Packer builders.
+Generator Packer is a code generator for Packer builders.
 
 It provides the following components:
 
