@@ -1,4 +1,9 @@
 ansible
 ansible-lint
+# ansible-core 2.19 introduced a "data tagging" feature with a known bug that
+# makes ansible-lint crash with "load-failure[runtimeerror]: The `src` field
+# must be an absolute path." on unrelated files:
+# https://github.com/ansible/ansible-lint/issues/4882
+ansible-core<2.19
 pytest-testinfra
 yamllint
