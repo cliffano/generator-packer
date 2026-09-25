@@ -16,8 +16,10 @@ It provides the following components:
 
 | Component | Description |
 |-----------|-------------|
-| packer-python | <some_component_desc> |
+| packer-python | Generate a Packer Python machine image project. |
 | packer-python-partials | Generate README partial snippets for Packer Python projects. |
+| packer-node | Generate a Packer Node.js machine image project. |
+| packer-node-partials | Generate README partial snippets for Packer Node.js projects. |
 
 ## Usage
 
@@ -25,12 +27,14 @@ Generate code generator project:
 
 ```shell
 make generate-packer-python
+make generate-packer-node
 ```
 
-Generate Packer Python partial snippets:
+Generate Packer partial snippets:
 
 ```shell
 make generate-packer-python-partials
+make generate-packer-node-partials
 ```
 
 This component will prompt you the following inputs:
@@ -49,6 +53,7 @@ Move to the generated project directory:
 
 ```shell
 cd stage/packer-python/
+cd stage/packer-node/
 ```
 
 ## Usage With Config File
@@ -60,6 +65,8 @@ Pass the config file path via the `GENERATOR_CONFIG` variable, it defaults to `b
 ```shell
 make generate-packer-python-with-config GENERATOR_CONFIG=path/to/backpacker.yml
 make generate-packer-python-partials-with-config GENERATOR_CONFIG=path/to/backpacker.yml
+make generate-packer-node-with-config GENERATOR_CONFIG=path/to/backpacker.yml
+make generate-packer-node-partials-with-config GENERATOR_CONFIG=path/to/backpacker.yml
 ```
 
 ## Configuration

@@ -1,0 +1,37 @@
+{
+  "resources": [
+    {
+      "path": "conf/packer/docker.json",
+      "type": "json",
+      "params": {
+        "property": "version"
+      }
+    },
+    {
+      "path": "Makefile",
+      "type": "makefile",
+      "params": {
+        "variable": "version"
+      }
+    },
+    {
+      "path": "CHANGELOG.md",
+      "type": "keep-a-changelog"
+    },
+    {
+      "path": "backpacker.yml",
+      "type": "yaml",
+      "params": {
+        "property": "image.version"
+      }
+    },
+    {
+      "path": ".github/workflows/publish-docker-workflow.yaml",
+      "type": "yaml",
+      "params": {
+        "property": "jobs.build.steps[0].with.ref",
+        "post_release_value": "main"
+      }
+    }
+  ]
+}

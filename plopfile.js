@@ -99,4 +99,36 @@ export default function (plop) {
       }
     ]
   });
+
+  plop.setGenerator('packer-node', {
+    description: 'Packer-node Plop',
+    prompts: prompts,
+    actions: [
+      {
+        type: 'addMany',
+        destination: 'stage',
+        templateFiles: [
+          'templates/packer-node/.*/*/*/*',
+          'templates/packer-node/.*/*/*',
+          'templates/packer-node/**/.*',
+          'templates/packer-node/**/*'
+        ]
+      }
+    ]
+  });
+
+  plop.setGenerator('packer-node-partials', {
+    description: 'Packer-node partials template',
+    prompts: prompts,
+    actions: [
+      {
+        type: 'addMany',
+        destination: 'stage/packer-node-partials',
+        templateFiles: [
+          'templates/packer-node-partials/*'
+        ],
+        base: 'templates/packer-node-partials'
+      }
+    ]
+  });
 };

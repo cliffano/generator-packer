@@ -1,0 +1,4 @@
+{
+  "docker_source": "node:24-alpine3.22",
+  "version": "0.1.0-pre.0"
+}

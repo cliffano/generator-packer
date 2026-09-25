@@ -1,0 +1,22 @@
+---
+- name: Provision {{project_name}}
+  hosts: localhost
+  tasks:
+    - name: Install message transformation command
+      ansible.builtin.copy:
+        dest: '/usr/local/bin/{{project_id}}'
+        mode: '0755'
+        content: |
+          #!/usr/bin/env node
+          const args = process.argv.slice(2);
+          let message = 'Hello World';
+          for (let i = 0; i < args.length; i++) {
+            if (args[i] === '--message') {
+              message = args[i + 1];
+            }
+          }
+
+          console.log(`Original: ${message}`);
+          console.log(`Reverse: ${[...message].reverse().join('')}`);
+          console.log(`Uppercase: ${message.toUpperCase()}`);
+          console.log(`Lowercase: ${message.toLowerCase()}`);

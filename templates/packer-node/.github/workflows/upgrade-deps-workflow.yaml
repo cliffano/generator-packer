@@ -1,0 +1,21 @@
+---
+name: Upgrade Deps
+on: [workflow_dispatch]
+jobs:
+  build:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          token: $\{{ secrets.STUDIO_GITHUB_TOKEN }}
+          set-safe-directory: $\{{ github.workspace }}
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.14'
+      - run: sudo make deps-extra-apt
+      - run: make clean deps deps-upgrade
+      - run: make ci
+      - uses: cliffano/save-changes-action@v2.0.0
+        with:
+          message: 'Upgrade dependencies to latest versions'
+          github_token: $\{{ secrets.STUDIO_GITHUB_TOKEN }}

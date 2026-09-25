@@ -1,0 +1,7 @@
+---
+image:
+  name: {{project_id}}
+  version: 0.1.0-pre.0
+author: {{author_name}}
+dockerhub:
+  username: {{github_id}}
