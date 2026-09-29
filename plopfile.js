@@ -65,6 +65,16 @@ export default function (plop) {
       type: 'input',
       name: 'github_token_prefix',
       message: 'GitHub Actions token prefix'
+    },
+    {
+      type: 'input',
+      name: 'image_name',
+      message: 'Image Name'
+    },
+    {
+      type: 'input',
+      name: 'dockerhub_username',
+      message: 'Dockerhub Username'
     }
   ];
 

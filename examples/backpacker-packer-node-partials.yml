@@ -13,3 +13,5 @@ generator:
     github_id: cliffano
     github_repo: generator-packer
     github_token_prefix: STUDIO
+    image_name: packer-node
+    dockerhub_username: cliffano

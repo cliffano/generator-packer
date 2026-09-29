@@ -32,6 +32,8 @@ $(1): GENERATOR_INPUTS_AUTHOR_URL = $$(shell yq .generator.inputs.author_url $(2
 $(1): GENERATOR_INPUTS_GITHUB_ID = $$(shell yq .generator.inputs.github_id $(2))
 $(1): GENERATOR_INPUTS_GITHUB_REPO = $$(shell yq .generator.inputs.github_repo $(2))
 $(1): GENERATOR_INPUTS_GITHUB_TOKEN_PREFIX = $$(shell yq .generator.inputs.github_token_prefix $(2))
+$(1): GENERATOR_INPUTS_IMAGE_NAME = $$(shell yq .generator.inputs.image_name $(2))
+$(1): GENERATOR_INPUTS_DOCKERHUB_USERNAME = $$(shell yq .generator.inputs.dockerhub_username $(2))
 endef
 
 ########################################
@@ -52,7 +54,9 @@ generate-packer-python-with-config: clean-packer-python
 		--author_url "$(GENERATOR_INPUTS_AUTHOR_URL)" \
 		--github_id "$(GENERATOR_INPUTS_GITHUB_ID)" \
 		--github_repo "$(GENERATOR_INPUTS_GITHUB_REPO)" \
-		--github_token_prefix "$(GENERATOR_INPUTS_GITHUB_TOKEN_PREFIX)"
+		--github_token_prefix "$(GENERATOR_INPUTS_GITHUB_TOKEN_PREFIX)" \
+		--image_name "$(GENERATOR_INPUTS_IMAGE_NAME)" \
+		--dockerhub_username "$(GENERATOR_INPUTS_DOCKERHUB_USERNAME)"
 
 test-packer-python: clean-packer-python
 	make generate-packer-python-with-config GENERATOR_CONFIG=examples/backpacker-packer-python.yml
@@ -80,7 +84,9 @@ generate-packer-python-partials-with-config: clean-packer-python-partials
 		--author_url "$(GENERATOR_INPUTS_AUTHOR_URL)" \
 		--github_id "$(GENERATOR_INPUTS_GITHUB_ID)" \
 		--github_repo "$(GENERATOR_INPUTS_GITHUB_REPO)" \
-		--github_token_prefix "$(GENERATOR_INPUTS_GITHUB_TOKEN_PREFIX)"
+		--github_token_prefix "$(GENERATOR_INPUTS_GITHUB_TOKEN_PREFIX)" \
+		--image_name "$(GENERATOR_INPUTS_IMAGE_NAME)" \
+		--dockerhub_username "$(GENERATOR_INPUTS_DOCKERHUB_USERNAME)"
 
 test-packer-python-partials: clean-packer-python-partials
 	make generate-packer-python-partials-with-config GENERATOR_CONFIG=examples/backpacker-packer-python-partials.yml
@@ -103,7 +109,9 @@ generate-packer-node-with-config: clean-packer-node
 		--author_url "$(GENERATOR_INPUTS_AUTHOR_URL)" \
 		--github_id "$(GENERATOR_INPUTS_GITHUB_ID)" \
 		--github_repo "$(GENERATOR_INPUTS_GITHUB_REPO)" \
-		--github_token_prefix "$(GENERATOR_INPUTS_GITHUB_TOKEN_PREFIX)"
+		--github_token_prefix "$(GENERATOR_INPUTS_GITHUB_TOKEN_PREFIX)" \
+		--image_name "$(GENERATOR_INPUTS_IMAGE_NAME)" \
+		--dockerhub_username "$(GENERATOR_INPUTS_DOCKERHUB_USERNAME)"
 
 test-packer-node: clean-packer-node
 	make generate-packer-node-with-config GENERATOR_CONFIG=examples/backpacker-packer-node.yml
@@ -131,7 +139,9 @@ generate-packer-node-partials-with-config: clean-packer-node-partials
 		--author_url "$(GENERATOR_INPUTS_AUTHOR_URL)" \
 		--github_id "$(GENERATOR_INPUTS_GITHUB_ID)" \
 		--github_repo "$(GENERATOR_INPUTS_GITHUB_REPO)" \
-		--github_token_prefix "$(GENERATOR_INPUTS_GITHUB_TOKEN_PREFIX)"
+		--github_token_prefix "$(GENERATOR_INPUTS_GITHUB_TOKEN_PREFIX)" \
+		--image_name "$(GENERATOR_INPUTS_IMAGE_NAME)" \
+		--dockerhub_username "$(GENERATOR_INPUTS_DOCKERHUB_USERNAME)"
 
 test-packer-node-partials: clean-packer-node-partials
 	make generate-packer-node-partials-with-config GENERATOR_CONFIG=examples/backpacker-packer-node-partials.yml

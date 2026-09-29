@@ -76,7 +76,7 @@ build {
   }
 
   post-processor "docker-tag" {
-    repository = "{{github_id}}/{{project_id}}"
+    repository = "{{dockerhub_username}}/{{image_name}}"
     tags        = [
       "latest",
       var.version

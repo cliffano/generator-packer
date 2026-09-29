@@ -5,7 +5,7 @@ set -o nounset
 printf "\n\n========================================\n"
 printf "Run the built Docker image and verify its message transformation\n"
 
-image="{{github_id}}/{{project_id}}:latest"
+image="{{dockerhub_username}}/{{image_name}}:latest"
 output="$(docker run --rm "$image" --message 'Hello Packer')"
 
 expected_original="Original: Hello Packer"

@@ -48,6 +48,10 @@ This component will prompt you the following inputs:
 | Author Email | The email of the project author. |
 | Author URL | The author's website URL. |
 | GitHub ID | The GitHub ID of the project repo. |
+| GitHub Repository | The name of the project's GitHub repository. |
+| GitHub Actions token prefix | Prefix of the GitHub Actions secret used for GitHub/Docker Hub tokens. |
+| Image Name | The name of the Docker machine image. |
+| Dockerhub Username | The Docker Hub account used to publish the machine image. |
 
 Move to the generated project directory:
 

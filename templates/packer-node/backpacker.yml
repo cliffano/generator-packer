@@ -1,7 +1,21 @@
 ---
 image:
-  name: {{project_id}}
+  name: {{image_name}}
   version: 0.1.0-pre.0
 author: {{author_name}}
 dockerhub:
-  username: {{github_id}}
+  username: {{dockerhub_username}}
+generator:
+  component: packer-node
+  inputs:
+    project_id: {{project_id}}
+    project_name: {{project_name}}
+    project_desc: {{project_desc}}
+    author_name: {{author_name}}
+    author_email: {{author_email}}
+    author_url: {{author_url}}
+    dockerhub_username: {{dockerhub_username}}
+    image_name: {{image_name}}
+    github_id: {{github_id}}
+    github_repo: {{github_repo}}
+    github_token_prefix: {{github_token_prefix}}

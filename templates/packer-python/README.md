@@ -6,8 +6,8 @@
 [![Build Status](https://github.com/{{github_id}}/{{github_repo}}/workflows/CI/badge.svg)](https://github.com/{{github_id}}/{{github_repo}}/actions?query=workflow%3ACI)
 [![Code Scanning Status](https://github.com/{{github_id}}/{{github_repo}}/workflows/CodeQL/badge.svg)](https://github.com/{{github_id}}/{{github_repo}}/actions?query=workflow%3ACodeQL)
 [![Security Status](https://snyk.io/test/github/{{github_id}}/{{github_repo}}/badge.svg)](https://snyk.io/test/github/{{github_id}}/{{github_repo}})
-[![Published Version](https://img.shields.io/docker/v/{{github_id}}/{{project_id}}.svg)](https://hub.docker.com/r/{{github_id}}/{{project_id}}/)
-[![Docker Pulls Count](https://img.shields.io/docker/pulls/{{github_id}}/{{project_id}}.svg)](https://hub.docker.com/r/{{github_id}}/{{project_id}}/)
+[![Published Version](https://img.shields.io/docker/v/{{dockerhub_username}}/{{image_name}}.svg)](https://hub.docker.com/r/{{dockerhub_username}}/{{image_name}}/)
+[![Docker Pulls Count](https://img.shields.io/docker/pulls/{{dockerhub_username}}/{{image_name}}.svg)](https://hub.docker.com/r/{{dockerhub_username}}/{{image_name}}/)
 <!-- END:BADGES -->
 
 # {{project_name}}
@@ -22,7 +22,7 @@ prints the original message plus reverse, uppercase, and lowercase variants.
 Pull the Docker image from Docker Hub:
 
 ```shell
-docker pull {{github_id}}/{{project_id}}
+docker pull {{dockerhub_username}}/{{image_name}}
 ```
 
 Or alternatively, you can build the Docker image locally:
@@ -38,13 +38,13 @@ make build-docker
 Run container using default message (`Hello World`):
 
 ```shell
-docker run --rm {{github_id}}/{{project_id}}
+docker run --rm {{dockerhub_username}}/{{image_name}}
 ```
 
 Run container using a custom message:
 
 ```shell
-docker run --rm {{github_id}}/{{project_id}} --message 'Hello Packer'
+docker run --rm {{dockerhub_username}}/{{image_name}} --message 'Hello Packer'
 ```
 
 Example output:

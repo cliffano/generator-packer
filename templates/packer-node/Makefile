@@ -147,7 +147,9 @@ define update_dotfiles_from_generator
 		--author_url "$(UPDATE_GENERATOR_INPUTS_AUTHOR_URL)" \
 		--github_id "$(UPDATE_GENERATOR_INPUTS_GITHUB_ID)" \
 		--github_repo "$(UPDATE_GENERATOR_INPUTS_GITHUB_REPO)" \
-		--github_token_prefix "$(UPDATE_GENERATOR_INPUTS_GITHUB_TOKEN_PREFIX)"
+		--github_token_prefix "$(UPDATE_GENERATOR_INPUTS_GITHUB_TOKEN_PREFIX)" \
+		--image_name "$(UPDATE_GENERATOR_INPUTS_IMAGE_NAME)" \
+		--dockerhub_username "$(UPDATE_GENERATOR_INPUTS_DOCKERHUB_USERNAME)"
 	cd stage/generator-$(1)/stage/$(UPDATE_GENERATOR_COMPONENT) && \
 	  for dotfile in $(2); do \
 		cp -R "$$dotfile" ../../../../"$$dotfile"; \
@@ -169,7 +171,9 @@ define update_partials_from_generator
 		--author_url "$(UPDATE_GENERATOR_INPUTS_AUTHOR_URL)" \
 		--github_id "$(UPDATE_GENERATOR_INPUTS_GITHUB_ID)" \
 		--github_repo "$(UPDATE_GENERATOR_INPUTS_GITHUB_REPO)" \
-		--github_token_prefix "$(UPDATE_GENERATOR_INPUTS_GITHUB_TOKEN_PREFIX)"
+		--github_token_prefix "$(UPDATE_GENERATOR_INPUTS_GITHUB_TOKEN_PREFIX)" \
+		--image_name "$(UPDATE_GENERATOR_INPUTS_IMAGE_NAME)" \
+		--dockerhub_username "$(UPDATE_GENERATOR_INPUTS_DOCKERHUB_USERNAME)"
 	for block in $(2); do \
 	  partial_file=$$(printf "%s" "$$block" | tr "A-Z" "a-z"); \
 	  ex -s \
@@ -191,6 +195,8 @@ $(1): UPDATE_GENERATOR_INPUTS_AUTHOR_URL = $$(shell yq .generator.inputs.author_
 $(1): UPDATE_GENERATOR_INPUTS_GITHUB_ID = $$(shell yq .generator.inputs.github_id $(2).yml)
 $(1): UPDATE_GENERATOR_INPUTS_GITHUB_REPO = $$(shell yq .generator.inputs.github_repo $(2).yml)
 $(1): UPDATE_GENERATOR_INPUTS_GITHUB_TOKEN_PREFIX = $$(shell yq .generator.inputs.github_token_prefix $(2).yml)
+$(1): UPDATE_GENERATOR_INPUTS_IMAGE_NAME = $$(shell yq .generator.inputs.image_name $(2).yml)
+$(1): UPDATE_GENERATOR_INPUTS_DOCKERHUB_USERNAME = $$(shell yq .generator.inputs.dockerhub_username $(2).yml)
 endef
 
 # Update Makefile to the latest version tag
