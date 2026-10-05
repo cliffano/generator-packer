@@ -6,7 +6,7 @@ name: Publish Docker
       - '*'
 jobs:
   build:
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-26.04
     steps:
       - uses: actions/checkout@v7
       - uses: docker/login-action@v4
@@ -15,7 +15,7 @@ jobs:
           password: $\{{ secrets.{{github_token_prefix}}_DOCKERHUB_TOKEN }}
       - uses: cliffano/command-docker-action@v2.1.0
         with:
-          image: cliffano/studio:3.8.0
+          image: cliffano/studio:4.0.0
           shell: bash
           extra_args: '-v ~/.docker/config.json:/root/.docker/config.json:ro'
           command: |
