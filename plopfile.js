@@ -141,4 +141,36 @@ export default function (plop) {
       }
     ]
   });
+
+  plop.setGenerator('packer-multi-arch', {
+    description: 'Packer-multi-arch Plop',
+    prompts: prompts,
+    actions: [
+      {
+        type: 'addMany',
+        destination: 'stage',
+        templateFiles: [
+          'templates/packer-multi-arch/.*/*/*/*',
+          'templates/packer-multi-arch/.*/*/*',
+          'templates/packer-multi-arch/**/.*',
+          'templates/packer-multi-arch/**/*'
+        ]
+      }
+    ]
+  });
+
+  plop.setGenerator('packer-multi-arch-partials', {
+    description: 'Packer-multi-arch partials template',
+    prompts: prompts,
+    actions: [
+      {
+        type: 'addMany',
+        destination: 'stage/packer-multi-arch-partials',
+        templateFiles: [
+          'templates/packer-multi-arch-partials/*'
+        ],
+        base: 'templates/packer-multi-arch-partials'
+      }
+    ]
+  });
 };

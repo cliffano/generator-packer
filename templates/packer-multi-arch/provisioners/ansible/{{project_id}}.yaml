@@ -1,0 +1,30 @@
+---
+- name: Provision {{project_name}}
+  hosts: localhost
+  tasks:
+    - name: Install message transformation command
+      ansible.builtin.copy:
+        dest: '/usr/local/bin/{{project_id}}'
+        mode: '0755'
+        content: |
+          #!/bin/sh
+          set -o errexit
+          set -o nounset
+
+          message="Hello World"
+          while [ "$#" -gt 0 ]; do
+            case "$1" in
+              --message)
+                message="$2"
+                shift 2
+                ;;
+              *)
+                shift
+                ;;
+            esac
+          done
+
+          echo "Original: $message"
+          echo "Reverse: $(echo "$message" | rev)"
+          echo "Uppercase: $(echo "$message" | tr '[:lower:]' '[:upper:]')"
+          echo "Lowercase: $(echo "$message" | tr '[:upper:]' '[:lower:]')"

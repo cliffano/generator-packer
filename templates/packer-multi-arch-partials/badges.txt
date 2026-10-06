@@ -1,0 +1,5 @@
+[![Build Status](https://github.com/{{github_id}}/{{github_repo}}/workflows/CI/badge.svg)](https://github.com/{{github_id}}/{{github_repo}}/actions?query=workflow%3ACI)
+[![Code Scanning Status](https://github.com/{{github_id}}/{{github_repo}}/workflows/CodeQL/badge.svg)](https://github.com/{{github_id}}/{{github_repo}}/actions?query=workflow%3ACodeQL)
+[![Security Status](https://snyk.io/test/github/{{github_id}}/{{github_repo}}/badge.svg)](https://snyk.io/test/github/{{github_id}}/{{github_repo}})
+[![Published Version](https://img.shields.io/docker/v/{{dockerhub_username}}/{{image_name}}.svg)](https://hub.docker.com/r/{{dockerhub_username}}/{{image_name}}/)
+[![Docker Pulls Count](https://img.shields.io/docker/pulls/{{dockerhub_username}}/{{image_name}}.svg)](https://hub.docker.com/r/{{dockerhub_username}}/{{image_name}}/)

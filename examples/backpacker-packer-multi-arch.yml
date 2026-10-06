@@ -1,0 +1,17 @@
+---
+package_name: generator-packer
+author: Cliffano Subagio
+generator:
+  component: packer-multi-arch
+  inputs:
+    project_id: packer-multi-arch
+    project_name: Packer Multi Arch
+    project_desc: Packer Multi Arch project description
+    author_name: Cliffano Subagio
+    author_email: blah@cliffano.com
+    author_url: https://github.com/cliffano
+    github_id: cliffano
+    github_repo: generator-packer
+    github_token_prefix: STUDIO
+    image_name: multi-arch
+    dockerhub_username: cliffano
